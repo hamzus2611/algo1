@@ -1,0 +1,24 @@
+ALGORITHM tack1
+VAR
+    s:STRING;
+    compte_char:INTEGER;
+    compte_v:INTEGER;
+    compte_w:INTEGER;
+    i:INTEGER
+BEGIN
+    compte_v:=0
+    compte_w:=1
+    FOR i FROM 0 TO length(s) STEP i++  DO
+        IF (s[i]=" ") THEN
+            compte_w:=compte_w+1
+        ELSE
+            compte_char:=compte_char+1
+        END_IF
+        IF (s[i] in ["a", "e", "i", "o", "u", "y", "A" , "E" ,"I" ,"O" ,"U" ,"Y") THEN
+            compte_v:=compte_v+1;
+        END_IF
+    END_FOR
+    Write("The number of characters are ",compte_char)
+    Write("The number of vowels are ",compte_v)
+    Write("The number of word are ",compte_w)
+END
